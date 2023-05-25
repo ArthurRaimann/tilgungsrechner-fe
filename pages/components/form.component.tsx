@@ -18,8 +18,9 @@ const FormComponent = ({
   const [interestRate, setInterestRate] = useState(0);
   const [initialRepayment, setInitialRepayment] = useState(0);
   const [fixedInterestPeriod, setFixedInterestPeriod] = useState(10);
+  const [loading, setLoading] = useState(false);
 
-  const API_URL = 'http://localhost:3003/payment-plan';
+  const API_URL = 'https://tilgungsrechner-api.herokuapp.com/payment-plan'; //'http://localhost:3003/payment-plan';
 
   useEffect(() => {
     if (initialFetchDone) {
@@ -35,6 +36,7 @@ const FormComponent = ({
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     await fetchPaymentPlan();
     setInitialFetchDone(true);
@@ -56,6 +58,7 @@ const FormComponent = ({
       });
 
       setPaymentPlan(await res.json());
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -167,7 +170,7 @@ const FormComponent = ({
           marginTop: '20px',
         }}
       >
-        Berechnen
+        {loading ? 'Loading...' : 'Berechnen'}
       </Button>
     </form>
   );
