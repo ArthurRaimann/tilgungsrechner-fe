@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { PaymentPlan } from '../src/model/paymentPlan.model';
 import FormComponent from '../src/components/form.component';
 import TableComponent from '../src/components/table.component';
+import ToolTipComponent from '../src/components/tooltip.component';
 
 export default function Home() {
   const [paymentPlan, setPaymentPlan] = useState<PaymentPlan>({
@@ -18,15 +19,31 @@ export default function Home() {
     <Container>
       <Box
         sx={{
-          my: 5,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" marginBottom={'50px'}>
-          Tilgungsplan
+        <Typography
+          variant="h4"
+          component="h1"
+          marginBottom={'50px'}
+          sx={{
+            backgroundColor: '#E2001A',
+            color: '#ffffff',
+            padding: '10px',
+            borderRadius: '5px',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          Tilgungsplan Rechner
+        </Typography>
+        <Typography variant="h6" component="h6">
+          Bedienungshinweis
+          <ToolTipComponent />
         </Typography>
 
         <FormComponent

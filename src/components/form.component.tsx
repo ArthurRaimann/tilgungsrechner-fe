@@ -142,7 +142,7 @@ const FormComponent = ({
           }}
         />
       </Box>
-      <Box sx={{ padding: '0 10px 0 10px' }} marginTop={'20px'}>
+      <Box sx={{ padding: '0 15px 0 10px' }} marginTop={'20px'}>
         <Typography id="input-slider" gutterBottom>
           Zinsbindungsdauer:
         </Typography>
