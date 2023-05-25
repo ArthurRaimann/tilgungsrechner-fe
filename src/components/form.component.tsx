@@ -20,7 +20,7 @@ const FormComponent = ({
   const [fixedInterestPeriod, setFixedInterestPeriod] = useState(10);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = 'https://tilgungsrechner-api.herokuapp.com/payment-plan'; //'http://localhost:3003/payment-plan';
+  const API_URL = 'http://localhost:3003/payment-plan';
 
   useEffect(() => {
     if (initialFetchDone) {
