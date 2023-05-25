@@ -16,9 +16,10 @@ const TableComponent = ({ paymentPlan }: { paymentPlan: PaymentPlan }) => {
         <TableHead>
           <TableRow>
             <TableCell>Jahr</TableCell>
-            <TableCell>Zinssatz</TableCell>
-            <TableCell>Tilgunssatz</TableCell>
-            <TableCell>Restschuld</TableCell>
+            <TableCell>Rate in €</TableCell>
+            <TableCell>Zinssatz in €</TableCell>
+            <TableCell>Tilgunssatz in €</TableCell>
+            <TableCell>Restschuld in €</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -30,9 +31,10 @@ const TableComponent = ({ paymentPlan }: { paymentPlan: PaymentPlan }) => {
               }}
             >
               <TableCell>{row.year}</TableCell>
-              <TableCell>{row.interestPortion} €</TableCell>
-              <TableCell>{row.repaymentPortion} €</TableCell>
-              <TableCell>{row.remainingDebt} €</TableCell>
+              <TableCell>{row.yearlyRate}</TableCell>
+              <TableCell>{row.interestPortion}</TableCell>
+              <TableCell>{row.repaymentPortion}</TableCell>
+              <TableCell>{row.remainingDebt}</TableCell>
             </TableRow>
           ))}
         </TableBody>

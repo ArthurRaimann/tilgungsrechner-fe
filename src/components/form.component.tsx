@@ -36,13 +36,23 @@ const FormComponent = ({
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
 
     await fetchPaymentPlan();
     setInitialFetchDone(true);
   };
 
   const fetchPaymentPlan = async () => {
+    if (
+      loanAmount < 0 ||
+      interestRate < 0 ||
+      initialRepayment < 0 ||
+      fixedInterestPeriod < 0
+    ) {
+      return;
+    }
+
+    setLoading(true);
+
     try {
       const res = await fetch(API_URL, {
         method: 'POST',
@@ -107,6 +117,7 @@ const FormComponent = ({
           id="loanAmount"
           label="Darlehensbetrag"
           variant="outlined"
+          inputProps={{ min: 0, step: 0.01 }}
           value={loanAmount ? loanAmount : ''}
           sx={{ marginRight: '10px', marginTop: '15px' }}
           onChange={(e) => {
@@ -120,6 +131,7 @@ const FormComponent = ({
           id="interestRate"
           label="Sollzinssatz"
           variant="outlined"
+          inputProps={{ min: 0.01, step: 0.01 }}
           value={interestRate ? interestRate : ''}
           sx={{ marginRight: '10px', marginTop: '15px' }}
           onChange={(e) => {
@@ -133,6 +145,7 @@ const FormComponent = ({
           id="initialRepayment"
           label="Tilgungssatz"
           variant="outlined"
+          inputProps={{ min: 0.01, step: 0.01 }}
           value={initialRepayment ? initialRepayment : ''}
           sx={{ marginRight: '10px', marginTop: '15px' }}
           onChange={(e) => {
@@ -169,6 +182,7 @@ const FormComponent = ({
           color: '#ffffff',
           marginTop: '20px',
         }}
+        disabled={loading}
       >
         {loading ? 'Loading...' : 'Berechnen'}
       </Button>

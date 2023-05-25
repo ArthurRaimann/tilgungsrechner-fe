@@ -16,7 +16,7 @@ export default function Home() {
   const [initialFetchDone, setInitialFetchDone] = useState(false);
 
   return (
-    <Container>
+    <Container sx={{ marginBottom: '50px' }}>
       <Box
         sx={{
           display: 'flex',
@@ -53,7 +53,7 @@ export default function Home() {
         />
 
         {initialFetchDone && (
-          <Box marginTop={'50px'}>
+          <Box sx={{ marginTop: '50px', width: '100%' }}>
             <Box
               sx={{
                 display: 'flex',
