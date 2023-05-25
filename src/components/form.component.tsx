@@ -20,7 +20,7 @@ const FormComponent = ({
   const [fixedInterestPeriod, setFixedInterestPeriod] = useState(10);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = 'http://localhost:3003/payment-plan';
+  const API_URL = 'https://tilgungsrechner-api.herokuapp.com/payment-plan';
 
   useEffect(() => {
     if (initialFetchDone) {
@@ -117,7 +117,6 @@ const FormComponent = ({
           id="loanAmount"
           label="Darlehensbetrag"
           variant="outlined"
-          inputProps={{ min: 0, step: 1000 }}
           value={loanAmount ? loanAmount : ''}
           sx={{ marginRight: '10px', marginTop: '15px' }}
           onChange={(e) => {
