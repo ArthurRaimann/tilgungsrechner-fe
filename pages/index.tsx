@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { PaymentPlan } from './model/paymentPlan.model';
-import FormComponent from './components/form.component';
-import TableComponent from './components/table.component';
+import { PaymentPlan } from '../model/paymentPlan.model';
+import FormComponent from '../components/form.component';
+import TableComponent from '../components/table.component';
 
 export default function Home() {
   const [paymentPlan, setPaymentPlan] = useState<PaymentPlan>({
