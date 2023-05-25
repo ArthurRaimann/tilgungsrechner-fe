@@ -51,7 +51,7 @@ function ToolTipComponent() {
       }
       placement="bottom-start"
       enterTouchDelay={10}
-      leaveTouchDelay={10000}
+      leaveTouchDelay={120_000}
     >
       <IconButton color="primary">
         <InfoIcon />
