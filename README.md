@@ -7,10 +7,6 @@ This app is the UI for the payment plan calculation. Find [Backend part here](ht
 #### ***Demo*** 
 https://tilgungsrechner-fe.vercel.app/
 
-#
-![tilgungsrechner-frontend](https://github.com/ArthurRaimann/tilgungsrechner-fe/assets/92532853/509512bd-7173-4703-adbc-47792986921d)
-
-#
 
 ## Installation and Starting
 
